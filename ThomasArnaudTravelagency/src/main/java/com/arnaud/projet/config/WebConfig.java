@@ -14,6 +14,9 @@ import org.springframework.web.servlet.view.UrlBasedViewResolver;
 @ComponentScan("com.arnaud.projet.controller")
 public class WebConfig implements WebMvcConfigurer {
 
+	public WebConfig() {
+		System.out.println("hello");
+	}
 	@Bean
 	public UrlBasedViewResolver viewResolver() {
 		UrlBasedViewResolver viewResolver = new UrlBasedViewResolver();

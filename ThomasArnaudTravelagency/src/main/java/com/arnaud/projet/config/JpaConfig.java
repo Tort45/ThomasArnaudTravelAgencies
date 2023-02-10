@@ -20,17 +20,14 @@ import jakarta.persistence.EntityManagerFactory;
 @EnableTransactionManagement
 @EnableJpaRepositories("com.arnaud.projet.dao")
 public class JpaConfig {
-
-	@Autowired
-	private Environment env;
 	
 	@Bean
 	public BasicDataSource dataSource() {
 		BasicDataSource dataSource = new BasicDataSource();
 		dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-		dataSource.setUrl(env.getProperty("jdbc:mysql://localhost:3306/travelagencies"));
-		dataSource.setUsername(env.getProperty("root"));
-		dataSource.setPassword(env.getProperty(""));
+		dataSource.setUrl("jdbc:mysql://localhost:3306/travelagencies");
+		dataSource.setUsername("root");
+		dataSource.setPassword("");
 		dataSource.setMaxTotal(10);
 		return dataSource;
 	}
